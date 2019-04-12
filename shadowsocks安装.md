@@ -1,16 +1,16 @@
-安装pip
+## 安装pip
 
 ```sh
 sudo apt-get install python-pip
 ```
 
-安装shadowsocks（必须加`sudo`）
+## 安装shadowsocks（必须加`sudo`）
 
 ```sh
 sudo pip install shadowsocks
 ```
 
-配置文件`/etc/shadowsocks/config.json`内容
+## 配置文件`/etc/shadowsocks/config.json`内容
 
 ```
 {
@@ -24,7 +24,7 @@ sudo pip install shadowsocks
 }
 ```
 
-启动shadowsocks
+## 启动shadowsocks
 
 启动ss服务器：
 
@@ -95,4 +95,4 @@ libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
 libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
 ```
 
-最后启动shadowsocks即可。
+最后重新启动shadowsocks即可。
