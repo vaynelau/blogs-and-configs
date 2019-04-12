@@ -63,14 +63,32 @@ AttributeError: /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1: undefined symbol: EV
 
 解决方法：
 
-1. 用vim打开文件：vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py (该路径请根据自己的系统情况自行修改，如果不知道该文件在哪里的话，可以使用find命令查找文件位置)
-2. 跳转到52行（shadowsocks2.8.2版本，其他版本搜索一下cleanup）
-3. 进入编辑模式
-4. 将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,) 
-   改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
-5. 再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 
-   改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
-6. 保存并退出
-7. 启动shadowsocks服务：service shadowsocks start 或 sslocal -c ss配置文件目录
-8. 问题解决
+修改`/usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py`文件 (如果找不到该文件可以使用find命令查找文件位置)，将第52行
 
+```python
+libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
+```
+
+修改为
+
+```python
+libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+```
+
+将第111行
+
+```python
+libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx) 
+```
+
+修改为
+
+```python
+libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+```
+
+最后启动shadowsocks服务：
+
+```python
+service shadowsocks start 或 sslocal -c ss配置文件目录
+```
