@@ -87,7 +87,7 @@ libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
 libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
 ```
 
-最后启动shadowsocks服务：
+最后启动shadowsocks服务
 
 ```python
 service shadowsocks start 或 sslocal -c ss配置文件目录
