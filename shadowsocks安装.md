@@ -1,12 +1,12 @@
 ## 安装pip
 
-```sh
-sudo apt-get install python-pip
+```shell
+sudo apt install python-pip
 ```
 
 ## 安装shadowsocks（必须加`sudo`）
 
-```sh
+```shell
 sudo pip install shadowsocks
 ```
 
@@ -71,7 +71,7 @@ AttributeError: /usr/lib/x86_64-linux-gnu/libcrypto.so.1.1: undefined symbol: EV
 
 解决方法：
 
-修改`/usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py`文件 (如果找不到该文件可以使用find命令查找文件位置)，将第52行
+修改`/usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py`文件 (如果找不到该文件可以使用`find`命令查找文件位置)，将第52行
 
 ```python
 libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
