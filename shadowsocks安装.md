@@ -4,7 +4,7 @@
 sudo apt-get install python-pip
 ```
 
-安装shadowsocks（必须加sudo）
+安装shadowsocks（必须加`sudo`）
 
 ```
 sudo pip install shadowsocks
