@@ -1,12 +1,12 @@
 安装pip
 
-```
+```sh
 sudo apt-get install python-pip
 ```
 
 安装shadowsocks（必须加`sudo`）
 
-```
+```sh
 sudo pip install shadowsocks
 ```
 
@@ -23,17 +23,18 @@ sudo pip install shadowsocks
   "method": "aes-256-cfb"
 }
 ```
+
 启动shadowsocks
 
 启动ss服务器：
 
-```
+```sh
 sudo ssserver -c /etc/shadowsocks/config.json -d start
 ```
 
 启动ss客户端：
 
-```
+```sh
 sudo sslocal -c /etc/shadowsocks/config.json -d start
 ```
 
