@@ -2,14 +2,11 @@
 
 
 ```sh
-cat /etc/shells
+cat /etc/shells # 查看所有shell
 
-echo $SHELL
-
+echo $SHELL # 查看当前shell
 
 sudo apt install zsh
-
-
 
 ```
 

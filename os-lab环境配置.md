@@ -53,13 +53,9 @@ mount: ./mipsiso: mount failed: Unknown error -1
 
 ```sh
 sudo apt install p7zip-full p7zip-rar # Ubuntu
-
 7z x mips-2007-01-21.iso -omipsiso # -o指定路径
-
 cd mipsiso
-
 chmod a+x install
-
 sudo ./install -d /opt/eldk
 ```
 
@@ -72,14 +68,12 @@ This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
 ```
 
-
-
 ## 安装仿真器
 
-下载0.4.6版本的gxemul：http://gavare.se/gxemul/src/gxemul-0.4.6.tar.gz
+首先下载了0.4.6版本的gxemul：
 
 ```sh
-wget https://src.fedoraproject.org/lookaside/extras/gxemul/gxemul-0.4.6.tar.gz/462e4e77ad0721742f8655ab6ff0ec4f/gxemul-0.4.6.tar.gz
+wget http://gavare.se/gxemul/src/gxemul-0.4.6.tar.gz
 ```
 
 `make`时出现以下错误
@@ -134,8 +128,6 @@ sudo cp gxemul /usr/local/bin
 git clone git@github.com:laudavid/BUAA_MIPS_OS.git
 ```
 
-
-
 ## 修改交叉编译器路径
 
 ```sh
@@ -143,7 +135,13 @@ cd BUAA_MIPS_OS
 vim include.mk
 ```
 
-将`CROSS_COMPILE := /OSLAB/compiler/usr/bin/mips_4KC-`修改为
+将
+
+```
+CROSS_COMPILE := /OSLAB/compiler/usr/bin/mips_4KC-
+```
+
+修改为
 
 ```
 CROSS_COMPILE := /opt/eldk/usr/bin/mips_4KC-
