@@ -14,10 +14,10 @@ sudo pip install shadowsocks
 
 ```
 {
-  "server": "0.0.0.0",
+  "server": "0.0.0.0", # 配置客户端时此处需填写服务器地址
+  "server_port": 8388,
   "local_address": "127.0.0.1",
   "local_port": 1080,
-  "server_port": 8388,
   "password":"liuwei321.0",
   "timeout": 300,
   "method": "aes-256-cfb"
