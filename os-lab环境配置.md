@@ -1,17 +1,17 @@
 # 操作系统实验环境配置
 
-## 系统版本
-
-操作系统：
+## 操作系统版本
 
 ```
-Ubuntu 18.04.2 LTS 64位
-```
-
-gcc版本：
-
-```
+Ubuntu 18.04.2 LTS
 gcc (Ubuntu 7.3.0-27ubuntu1~18.04) 7.3.0
+```
+
+或
+
+```
+Ubuntu 16.04.6 LTS
+gcc (Ubuntu 5.4.0-6ubuntu1~16.04.11) 5.4.0 20160609
 ```
 
 ## 安装交叉编译器
@@ -42,7 +42,7 @@ cd /mnt/mipsiso
 sudo ./install -d /opt/eldk
 ```
 
-挂载iso文件时可能遇到如下错误：
+第三部挂载iso文件时可能遇到如下错误：
 
 ```sh
 $ sudo mount -o loop mips-2007-01-21.iso ./mipsiso 
@@ -117,7 +117,7 @@ cd gxemul-0.6.1/
 ./configure
 make
 sudo make install
-sudo cp gxemul /usr/local/bin
+# sudo cp gxemul /usr/local/bin
 ```
 
 最后安装成功。
