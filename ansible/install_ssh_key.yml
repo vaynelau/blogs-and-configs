@@ -1,0 +1,11 @@
+# ssh-addkey.yml 
+---
+- hosts: all
+  gather_facts: no
+
+  tasks:
+
+  - name: install ssh key
+    authorized_key: user=psworker
+                    key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}" 
+                    state=present
